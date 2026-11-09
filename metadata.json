@@ -1,0 +1,8 @@
+{
+  "name": "VIVA Pilates 1 - Estudio Terapéutico en Providencia",
+  "description": "Estudio de pilates con enfoque terapéutico y bienestar integral en Providencia, Santiago de Chile. Movimiento consciente, íntimo y a tu propio ritmo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
