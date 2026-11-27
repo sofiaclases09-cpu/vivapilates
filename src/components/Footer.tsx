@@ -9,7 +9,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="pt-10 pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative border-t border-[#BAA8D2]/30" role="contentinfo">
+    <footer className="pt-10 pb-24 md:pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative border-t border-[#BAA8D2]/30" role="contentinfo">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 text-xs sm:text-sm text-[#2D2B28]/80 font-sans">
         {/* Brand & Mission */}
         <div className="md:col-span-5 space-y-3">

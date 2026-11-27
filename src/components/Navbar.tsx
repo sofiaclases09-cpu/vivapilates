@@ -18,24 +18,24 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header id="viva-header" className="sticky top-4 z-50 px-4 sm:px-6 max-w-7xl mx-auto" role="banner">
+    <header id="viva-header" className="sticky top-2.5 sm:top-4 z-50 px-3 sm:px-6 max-w-7xl mx-auto" role="banner">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#F7F4ED]/90 backdrop-blur-md border border-[#BAA8D2]/40 rounded-full px-5 sm:px-8 py-3.5 shadow-sm shadow-[#5F6950]/5 flex items-center justify-between transition-all"
+        className="bg-[#F7F4ED]/90 backdrop-blur-md border border-[#BAA8D2]/40 rounded-full px-4 sm:px-8 py-2.5 sm:py-3.5 shadow-sm shadow-[#5F6950]/5 flex items-center justify-between transition-all"
       >
         {/* Logo + Location for Local GEO Recognition */}
-        <a href="#viva-hero" className="flex items-center gap-3 group" aria-label="VIVA Pilates - Inicio">
-          <div className="w-9 h-9 rounded-full bg-[#5F6950] text-[#F7F4ED] flex items-center justify-center font-editorial text-lg tracking-wider transition-transform group-hover:scale-105 shadow-inner">
+        <a href="#viva-hero" className="flex items-center gap-2.5 sm:gap-3 group" aria-label="VIVA Pilates - Inicio">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#5F6950] text-[#F7F4ED] flex items-center justify-center font-editorial text-base sm:text-lg tracking-wider transition-transform group-hover:scale-105 shadow-inner">
             V
           </div>
           <div className="flex flex-col">
-            <span className="font-editorial text-xl sm:text-2xl tracking-wide text-[#2D2B28] font-medium leading-none">
-              VIVA <span className="font-sans text-xs tracking-widest text-[#5F6950] font-semibold uppercase ml-1">Pilates</span>
+            <span className="font-editorial text-lg sm:text-2xl tracking-wide text-[#2D2B28] font-medium leading-none">
+              VIVA <span className="font-sans text-[10px] sm:text-xs tracking-widest text-[#5F6950] font-semibold uppercase ml-1">Pilates</span>
             </span>
-            <span className="text-[11px] text-[#2D2B28]/70 flex items-center gap-1 font-sans mt-0.5">
-              <MapPin className="w-3 h-3 text-[#5F6950]" aria-hidden="true" />
+            <span className="text-[10px] sm:text-[11px] text-[#2D2B28]/70 flex items-center gap-1 font-sans mt-0.5">
+              <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#5F6950]" aria-hidden="true" />
               <span>Providencia, Santiago</span>
             </span>
           </div>
@@ -62,13 +62,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action CTAs */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Ambient Sound Button (sintonizar.mp3) */}
+          {/* Ambient Sound Button (accessible directly on mobile & desktop) */}
           <button
             type="button"
             onClick={toggleCalmTone}
             title={isPlayingSound ? "Pausar ambiente sonoro" : "Sintonizar ambiente sonoro"}
             aria-label={isPlayingSound ? "Pausar música ambiental" : "Reproducir música ambiental de calma"}
-            className={`hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
               isPlayingSound
                 ? "bg-[#5F6950] text-[#F7F4ED] shadow-sm animate-pulse"
                 : "bg-[#E5DCED]/80 text-[#2D2B28] hover:bg-[#BAA8D2]/50"
@@ -78,17 +78,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="text-[11px]">{isPlayingSound ? "Sonando" : "Sintonizar"}</span>
           </button>
 
-          {/* WhatsApp Primary CTA */}
+          {/* WhatsApp Primary CTA (Desktop/Tablet - on mobile lives in dedicated bottom thumb bar) */}
           <button
             type="button"
             onClick={() => openWhatsApp()}
             id="header-cta-whatsapp"
             aria-label="Hablar con VIVA Pilates por WhatsApp"
-            className="bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide flex items-center gap-2 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap"
+            className="hidden sm:flex bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-5 py-2.5 rounded-full text-sm font-medium tracking-wide items-center gap-2 shadow-sm hover:shadow-md transition-all active:scale-95 cursor-pointer whitespace-nowrap"
           >
             <MessageCircle className="w-4 h-4" aria-hidden="true" />
-            <span className="hidden sm:inline">Hablar por WhatsApp</span>
-            <span className="sm:hidden">WhatsApp</span>
+            <span>Hablar por WhatsApp</span>
           </button>
 
           {/* Mobile Menu Trigger */}
@@ -111,11 +110,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             initial={{ opacity: 0, y: -10, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            className="lg:hidden mt-2 bg-[#F7F4ED] border border-[#BAA8D2]/50 rounded-3xl p-6 shadow-xl backdrop-blur-xl flex flex-col gap-4 text-base font-sans"
+            className="lg:hidden mt-2 bg-[#F7F4ED] border border-[#BAA8D2]/50 rounded-3xl p-6 shadow-xl backdrop-blur-xl flex flex-col gap-3 text-base font-sans"
             role="navigation"
             aria-label="Menú para dispositivos móviles"
           >
-            <div className="flex items-center justify-between pb-3 border-b border-[#BAA8D2]/30">
+            <div className="flex items-center justify-between pb-2.5 border-b border-[#BAA8D2]/30">
               <span className="text-xs font-semibold tracking-wider uppercase text-[#5F6950]">Navegación</span>
               <span className="text-xs text-[#5F6950] flex items-center gap-1">
                 <MapPin className="w-3 h-3" aria-hidden="true" /> Providencia, Santiago
@@ -163,19 +162,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
 
             <div className="pt-3 border-t border-[#BAA8D2]/30 flex flex-col gap-2.5">
-              <button
-                type="button"
-                onClick={toggleCalmTone}
-                className={`w-full py-2.5 rounded-full text-xs font-medium flex items-center justify-center gap-2 transition-all cursor-pointer ${
-                  isPlayingSound
-                    ? "bg-[#5F6950] text-[#F7F4ED] shadow-sm animate-pulse"
-                    : "bg-[#E5DCED] text-[#2D2B28] hover:bg-[#BAA8D2]/50"
-                }`}
-              >
-                {isPlayingSound ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-                <span>{isPlayingSound ? "Pausar música / sonido de calma" : "Sintonizar música / sonido de calma"}</span>
-              </button>
-
               <button
                 type="button"
                 onClick={() => {

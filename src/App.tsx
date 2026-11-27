@@ -164,8 +164,11 @@ export default function App() {
       {/* 3. Semantic Footer */}
       <Footer onOpenBookingModal={() => setIsModalOpen(true)} />
 
-      {/* 4. Floating WhatsApp Quick Action */}
-      <FloatingWhatsApp openWhatsApp={openWhatsApp} />
+      {/* 4. Floating WhatsApp Quick Action (Desktop) & Mobile Thumb Bar */}
+      <FloatingWhatsApp
+        openWhatsApp={openWhatsApp}
+        onOpenBookingModal={() => setIsModalOpen(true)}
+      />
 
       {/* 5. Booking & Welcome Conversation Modal */}
       <BookingModal

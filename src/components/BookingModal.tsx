@@ -34,7 +34,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -44,13 +49,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
             className="absolute inset-0 bg-[#2D2933]/65 backdrop-blur-sm"
           />
 
-          {/* Dialog Content */}
+          {/* Dialog Content: Bottom Sheet on mobile, centered modal on sm+ */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative z-10 w-full max-w-lg bg-[#F7F4ED] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#BAA8D2]/50"
+            initial={{ opacity: 0, y: 40, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 40, scale: 0.98 }}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 w-full max-w-lg bg-[#F7F4ED] rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border-t sm:border border-[#BAA8D2]/50 max-h-[90svh] overflow-y-auto"
           >
+            {/* Mobile drag handle indicator */}
+            <div className="w-10 h-1 rounded-full bg-[#BAA8D2]/70 mx-auto mb-4 sm:hidden" aria-hidden="true" />
+
             <button
               type="button"
               onClick={onClose}
@@ -60,7 +69,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
               <X className="w-5 h-5" aria-hidden="true" />
             </button>
 
-            <div className="mb-6">
+            <div className="mb-5 sm:mb-6">
               <span className="text-xs uppercase tracking-widest text-[#5F6950] font-semibold block mb-1">
                 Conversación de Bienvenida
               </span>
@@ -142,7 +151,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-6 py-2.5 rounded-full text-xs font-medium tracking-wide flex items-center gap-2 shadow-md transition-all cursor-pointer"
+                    className="flex-1 sm:flex-none justify-center bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-6 py-3 sm:py-2.5 rounded-full text-xs font-medium tracking-wide flex items-center gap-2 shadow-md transition-all cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" aria-hidden="true" />
                     <span>Continuar a WhatsApp</span>
