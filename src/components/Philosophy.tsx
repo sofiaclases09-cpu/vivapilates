@@ -39,7 +39,7 @@ export const Philosophy: React.FC = () => {
               01
             </span>
             <div className="relative z-10 lg:pt-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E5DCED] text-[#2D2B28] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-2.5 lg:mb-3 border border-[#BAA8D2]/40">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E5DCED] lg:bg-[#BAA8D2]/20 text-[#2D2B28] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-2.5 lg:mb-3 border border-[#BAA8D2]/40">
                 <UserCheck className="w-3.5 h-3.5 text-[#5F6950]" aria-hidden="true" />
                 01 · ATENCIÓN PERSONALIZADA
               </span>
@@ -147,7 +147,7 @@ export const Philosophy: React.FC = () => {
               03
             </span>
             <div className="relative z-10 lg:pt-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E5DCED] text-[#2D2B28] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-2.5 lg:mb-3 border border-[#BAA8D2]/40">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E5DCED] lg:bg-[#BAA8D2]/20 text-[#2D2B28] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-2.5 lg:mb-3 border border-[#BAA8D2]/40">
                 <Heart className="w-3.5 h-3.5 text-[#5F6950]" aria-hidden="true" />
                 03 · BIENESTAR FÍSICO Y EMOCIONAL
               </span>
