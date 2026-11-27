@@ -12,6 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
   const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
   const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isDesktopVideoPlaying, setIsDesktopVideoPlaying] = useState(false);
+  const [isMobileVideoPlaying, setIsMobileVideoPlaying] = useState(false);
 
   useEffect(() => {
     const videos = [desktopVideoRef.current, mobileVideoRef.current].filter(
@@ -28,6 +29,9 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
           .then(() => {
             if (video === desktopVideoRef.current && !video.paused) {
               setIsDesktopVideoPlaying(true);
+            }
+            if (video === mobileVideoRef.current && !video.paused) {
+              setIsMobileVideoPlaying(true);
             }
           })
           .catch(() => {});
@@ -135,8 +139,10 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.03]"
-            poster="/videos/viva-hero-poster.jpg"
+            onPlaying={() => setIsMobileVideoPlaying(true)}
+            className={`w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.03] transition-opacity duration-700 ${
+              isMobileVideoPlaying ? 'opacity-100' : 'opacity-0'
+            }`}
             title="Ejercicio de respiración y movimiento consciente en Pilates Reformer"
           >
             <source src="/videos/VivaHero.mp4" type="video/mp4" />
