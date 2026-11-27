@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Feather, MapPin, ArrowRight, Wind } from 'lucide-react';
 import { BreathPhase } from '../types';
@@ -11,6 +11,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) => {
   const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
   const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isDesktopVideoPlaying, setIsDesktopVideoPlaying] = useState(false);
 
   useEffect(() => {
     const videos = [desktopVideoRef.current, mobileVideoRef.current].filter(
@@ -22,7 +23,14 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
         video.defaultMuted = true;
         video.muted = true;
         video.playsInline = true;
-        video.play().catch(() => {});
+        video
+          .play()
+          .then(() => {
+            if (video === desktopVideoRef.current && !video.paused) {
+              setIsDesktopVideoPlaying(true);
+            }
+          })
+          .catch(() => {});
       });
     };
 
@@ -52,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
       aria-label="VIVA Pilates - Estudio terapéutico de reformer en Providencia"
       className="relative -mt-20 pt-24 pb-10 lg:pt-36 lg:pb-28 px-4 sm:px-6 lg:px-12 bg-[#BAA8D2] lg:bg-[#37323E] text-[#2D2B28] lg:text-[#F7F4ED] overflow-hidden min-h-[calc(100svh-1rem)] lg:min-h-[760px] flex items-center shadow-2xl"
     >
-      {/* DESKTOP BACKGROUND VIDEO (100% intact for web lg+) */}
+      {/* DESKTOP BACKGROUND VIDEO (100% intact for web lg+, no poster so no frozen face appears) */}
       <div className="hidden lg:block absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
         <video
           ref={desktopVideoRef}
@@ -61,8 +69,10 @@ export const Hero: React.FC<HeroProps> = ({ breathPhase, onOpenBookingModal }) =
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter saturate-[0.88] contrast-[1.04]"
-          poster="/videos/viva-hero-poster.jpg"
+          onPlaying={() => setIsDesktopVideoPlaying(true)}
+          className={`w-full h-full object-cover object-center filter saturate-[0.88] contrast-[1.04] transition-opacity duration-700 ${
+            isDesktopVideoPlaying ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <source src="/videos/VivaHero.mp4" type="video/mp4" />
           <source src="/videos/viva-hero.webm" type="video/webm" />
