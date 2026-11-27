@@ -5,12 +5,17 @@
     --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --color-cream: #F7F4ED;
+    --color-lavender-mist: #E5DCED;
+    --color-lilac: #BAA8D2;
+    --color-sage: #5F6950;
+    --color-ink: #2D2B28;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #F6F2EA;
-    color: #4A4540;
+    background-color: #F7F4ED;
+    color: #2D2B28;
     overflow-x: hidden;
   }
 

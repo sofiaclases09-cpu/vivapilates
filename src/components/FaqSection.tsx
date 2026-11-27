@@ -63,19 +63,19 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
   return (
     <section
       id="preguntas-frecuentes"
-      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative border-t border-[#5E4E63]/15"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative border-t border-[#BAA8D2]/30"
       aria-labelledby="faq-title"
     >
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#BA4F12]/15 text-[#BA4F12] text-xs font-semibold uppercase tracking-wider mb-3">
-          <HelpCircle className="w-3.5 h-3.5 text-[#BA4F12]" aria-hidden="true" />
-          <span>Preguntas Frecuentes · AEO & Información Práctica</span>
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#E5DCED] text-[#2D2B28] text-xs font-semibold uppercase tracking-wider mb-3 border border-[#BAA8D2]/40">
+          <HelpCircle className="w-3.5 h-3.5 text-[#5F6950]" aria-hidden="true" />
+          <span>Preguntas Frecuentes · Información Práctica</span>
         </span>
-        <h2 id="faq-title" className="font-editorial text-3xl sm:text-5xl text-[#5E4E63] font-normal leading-tight mb-4">
+        <h2 id="faq-title" className="font-editorial text-3xl sm:text-5xl text-[#2D2B28] font-normal leading-tight mb-4">
           Todo lo que necesitas saber antes de empezar.
         </h2>
-        <p className="text-base sm:text-lg text-[#4A4540]/80 font-sans leading-relaxed">
+        <p className="text-base sm:text-lg text-[#2D2B28]/80 font-sans leading-relaxed">
           Respuestas claras sobre nuestro método terapéutico, el estudio en Providencia, grupos reducidos y cómo iniciar tu práctica.
         </p>
       </div>
@@ -89,8 +89,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
               key={faq.id}
               className={`rounded-2xl border transition-all duration-300 ${
                 isOpen
-                  ? 'bg-white/80 border-[#5E4E63]/30 shadow-md'
-                  : 'bg-[#F6F2EA] border-[#5E4E63]/15 hover:border-[#5E4E63]/30'
+                  ? 'bg-[#E5DCED]/45 border-[#BAA8D2]/70 shadow-md'
+                  : 'bg-[#F7F4ED] border-[#BAA8D2]/40 hover:border-[#BAA8D2]/80'
               }`}
             >
               <button
@@ -98,14 +98,14 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
                 onClick={() => toggleAccordion(faq.id)}
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${faq.id}`}
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BA4F12]"
+                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5F6950]"
               >
-                <h3 className="font-editorial text-lg sm:text-xl text-[#5E4E63] font-medium leading-snug">
+                <h3 className="font-editorial text-lg sm:text-xl text-[#2D2B28] font-medium leading-snug">
                   {faq.question}
                 </h3>
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'rotate-180 bg-[#5E4E63] text-[#F6F2EA]' : 'bg-[#5E4E63]/10 text-[#5E4E63]'
+                    isOpen ? 'rotate-180 bg-[#5F6950] text-[#F7F4ED]' : 'bg-[#E5DCED] text-[#2D2B28]'
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" aria-hidden="true" />
@@ -124,7 +124,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-[#4A4540]/90 font-sans leading-relaxed border-t border-[#5E4E63]/10">
+                    <div className="px-6 pb-6 pt-2 text-sm sm:text-base text-[#2D2B28]/90 font-sans leading-relaxed border-t border-[#BAA8D2]/30">
                       <p>{faq.answer}</p>
                     </div>
                   </motion.div>
@@ -136,10 +136,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
       </div>
 
       {/* Extra CTA Box */}
-      <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#5E4E63]/5 border border-[#5E4E63]/15 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#E5DCED]/50 border border-[#BAA8D2]/45 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="text-center sm:text-left">
-          <h4 className="font-editorial text-xl sm:text-2xl text-[#5E4E63]">¿Tienes una consulta específica o indicación médica?</h4>
-          <p className="text-xs sm:text-sm text-[#4A4540]/80 font-sans mt-1">
+          <h4 className="font-editorial text-xl sm:text-2xl text-[#2D2B28]">¿Tienes una consulta específica o indicación médica?</h4>
+          <p className="text-xs sm:text-sm text-[#2D2B28]/80 font-sans mt-1">
             Escríbenos directamente y conversaremos sobre tu situación particular.
           </p>
         </div>
@@ -147,7 +147,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
           <button
             type="button"
             onClick={() => openWhatsApp("Hola VIVA Pilates, tengo una consulta específica antes de agendar mi primera clase.")}
-            className="bg-[#BA4F12] hover:bg-[#9d420e] text-[#F6F2EA] px-6 py-3 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-sm transition-all cursor-pointer"
+            className="bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-6 py-3 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-sm transition-all cursor-pointer"
           >
             <MessageCircle className="w-4 h-4" aria-hidden="true" />
             <span>Consultar por WhatsApp</span>
@@ -155,7 +155,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ openWhatsApp, onOpenBook
           <button
             type="button"
             onClick={onOpenBookingModal}
-            className="border border-[#5E4E63]/30 hover:border-[#5E4E63] text-[#5E4E63] px-5 py-3 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer"
+            className="border border-[#5F6950]/45 hover:border-[#5F6950] text-[#5F6950] hover:bg-[#F7F4ED]/60 px-5 py-3 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer"
           >
             Agendar conversación
           </button>

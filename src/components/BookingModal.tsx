@@ -41,7 +41,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#5E4E63]/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#2D2933]/65 backdrop-blur-sm"
           />
 
           {/* Dialog Content */}
@@ -49,43 +49,43 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative z-10 w-full max-w-lg bg-[#F6F2EA] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#5E4E63]/20"
+            className="relative z-10 w-full max-w-lg bg-[#F7F4ED] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#BAA8D2]/50"
           >
             <button
               type="button"
               onClick={onClose}
               aria-label="Cerrar ventana de agendamiento"
-              className="absolute top-5 right-5 p-1.5 rounded-full text-[#5E4E63]/60 hover:text-[#5E4E63] hover:bg-[#5E4E63]/10 transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-1.5 rounded-full text-[#2D2B28]/60 hover:text-[#2D2B28] hover:bg-[#E5DCED] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" aria-hidden="true" />
             </button>
 
             <div className="mb-6">
-              <span className="text-xs uppercase tracking-widest text-[#BA4F12] font-semibold block mb-1">
+              <span className="text-xs uppercase tracking-widest text-[#5F6950] font-semibold block mb-1">
                 Conversación de Bienvenida
               </span>
-              <h3 id="modal-title" className="font-editorial text-2xl sm:text-3xl text-[#5E4E63] font-medium">
+              <h3 id="modal-title" className="font-editorial text-2xl sm:text-3xl text-[#2D2B28] font-medium">
                 Cuéntanos sobre ti y tu cuerpo
               </h3>
-              <p className="text-xs sm:text-sm text-[#4A4540]/80 mt-1.5 font-sans">
+              <p className="text-xs sm:text-sm text-[#2D2B28]/80 mt-1.5 font-sans">
                 Sin compromisos ni exigencias. Te responderemos personalmente para orientarte hacia el grupo y horario ideal para ti.
               </p>
             </div>
 
             {formSubmitted ? (
               <div className="py-8 text-center space-y-3" role="status">
-                <div className="w-12 h-12 rounded-full bg-[#606E51] text-[#F6F2EA] flex items-center justify-center mx-auto">
+                <div className="w-12 h-12 rounded-full bg-[#5F6950] text-[#F7F4ED] flex items-center justify-center mx-auto">
                   <Check className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h4 className="font-editorial text-xl text-[#5E4E63]">¡Gracias por tu confianza!</h4>
-                <p className="text-xs text-[#4A4540]/80">
+                <h4 className="font-editorial text-xl text-[#2D2B28]">¡Gracias por tu confianza!</h4>
+                <p className="text-xs text-[#2D2B28]/80">
                   Abriendo WhatsApp para coordinar tu conversación...
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 font-sans text-sm">
                 <div>
-                  <label htmlFor="modal-name" className="block text-xs font-semibold text-[#5E4E63] uppercase tracking-wider mb-1">
+                  <label htmlFor="modal-name" className="block text-xs font-semibold text-[#5F6950] uppercase tracking-wider mb-1">
                     Tu Nombre
                   </label>
                   <input
@@ -95,19 +95,19 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
                     placeholder="Ej. Sofía Morales"
                     value={modalForm.name}
                     onChange={(e) => setModalForm({ ...modalForm, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/80 border border-[#5E4E63]/20 focus:outline-none focus:ring-2 focus:ring-[#BA4F12]/40 text-[#4A4540]"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-[#BAA8D2]/50 focus:outline-none focus:ring-2 focus:ring-[#5F6950]/40 text-[#2D2B28]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="modal-concern" className="block text-xs font-semibold text-[#5E4E63] uppercase tracking-wider mb-1">
+                  <label htmlFor="modal-concern" className="block text-xs font-semibold text-[#5F6950] uppercase tracking-wider mb-1">
                     Motivo o Molestia Principal
                   </label>
                   <select
                     id="modal-concern"
                     value={modalForm.concern}
                     onChange={(e) => setModalForm({ ...modalForm, concern: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/80 border border-[#5E4E63]/20 focus:outline-none focus:ring-2 focus:ring-[#BA4F12]/40 text-[#4A4540]"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-[#BAA8D2]/50 focus:outline-none focus:ring-2 focus:ring-[#5F6950]/40 text-[#2D2B28]"
                   >
                     <option value="Dolor o tensión lumbar / cervical">Dolor o tensión lumbar / cervical</option>
                     <option value="Estrés laboral y necesidad de pausa">Estrés laboral y necesidad de pausa</option>
@@ -119,7 +119,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
                 </div>
 
                 <div>
-                  <label htmlFor="modal-message" className="block text-xs font-semibold text-[#5E4E63] uppercase tracking-wider mb-1">
+                  <label htmlFor="modal-message" className="block text-xs font-semibold text-[#5F6950] uppercase tracking-wider mb-1">
                     ¿Algún detalle que quieras compartir? (Opcional)
                   </label>
                   <textarea
@@ -128,7 +128,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
                     placeholder="Ej. Siento rigidez en hombros al trabajar frente al computador..."
                     value={modalForm.message}
                     onChange={(e) => setModalForm({ ...modalForm, message: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/80 border border-[#5E4E63]/20 focus:outline-none focus:ring-2 focus:ring-[#BA4F12]/40 text-[#4A4540] resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-[#BAA8D2]/50 focus:outline-none focus:ring-2 focus:ring-[#5F6950]/40 text-[#2D2B28] resize-none"
                   />
                 </div>
 
@@ -136,13 +136,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, ope
                   <button
                     type="button"
                     onClick={onClose}
-                    className="px-5 py-2.5 rounded-full text-xs font-medium text-[#4A4540] hover:bg-[#5E4E63]/10 transition-colors cursor-pointer"
+                    className="px-5 py-2.5 rounded-full text-xs font-medium text-[#2D2B28] hover:bg-[#E5DCED] transition-colors cursor-pointer"
                   >
                     Cancelar
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#BA4F12] hover:bg-[#9d420e] text-[#F6F2EA] px-6 py-2.5 rounded-full text-xs font-medium tracking-wide flex items-center gap-2 shadow-md transition-all cursor-pointer"
+                    className="bg-[#5F6950] hover:bg-[#4B543E] text-[#F7F4ED] px-6 py-2.5 rounded-full text-xs font-medium tracking-wide flex items-center gap-2 shadow-md transition-all cursor-pointer"
                   >
                     <MessageCircle className="w-4 h-4" aria-hidden="true" />
                     <span>Continuar a WhatsApp</span>

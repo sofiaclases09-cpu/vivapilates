@@ -126,12 +126,12 @@ export default function App() {
   };
 
   return (
-    <div id="viva-app-container" className="min-h-screen bg-[#F6F2EA] text-[#4A4540] relative overflow-x-hidden selection:bg-[#BA4F12]/20 selection:text-[#5E4E63]">
+    <div id="viva-app-container" className="min-h-screen bg-[#F7F4ED] text-[#2D2B28] relative overflow-x-hidden selection:bg-[#BAA8D2]/35 selection:text-[#2D2B28]">
       {/* Organic Ambient Light Bleeds */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#5E4E63]/10 blur-[130px] animate-pulse-glow" />
-        <div className="absolute top-[35%] -right-40 w-[550px] h-[550px] rounded-full bg-[#BA4F12]/8 blur-[140px]" />
-        <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-[#606E51]/10 blur-[150px]" />
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#E5DCED]/60 blur-[130px] animate-pulse-glow" />
+        <div className="absolute top-[35%] -right-40 w-[550px] h-[550px] rounded-full bg-[#BAA8D2]/25 blur-[140px]" />
+        <div className="absolute top-[70%] left-[10%] w-[650px] h-[650px] rounded-full bg-[#5F6950]/12 blur-[150px]" />
       </div>
 
       {/* 1. Header & Navigation */}
